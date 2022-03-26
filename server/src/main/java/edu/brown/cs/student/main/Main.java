@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Arrays;
+
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Arrays;
 import spark.ExceptionHandler;
 import spark.ModelAndView;
 import spark.QueryParamsMap;
@@ -53,6 +54,7 @@ public final class Main {
     this.args = args;
   }
 
+  //Marco's change...git a
   private void run() {
     // Parse command line arguments
     OptionParser parser = new OptionParser();
@@ -63,7 +65,6 @@ public final class Main {
     OptionSet options = parser.parse(args);
 
     if (options.has("gui")) {
-
       runSparkServer((int) options.valueOf("port"));
     }
   }
